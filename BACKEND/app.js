@@ -38,8 +38,12 @@ const Schema = mongoose.Schema;
 
 const productoSchema = new Schema({
     nombre: String,
-    descripcion: String,
     precio: Number,
+    categoria:String,
+    disponible: Boolean,
+    descripcion: String,
+    stock: Number,
+
 }, {collection: 'productos'});
 
 const Producto = mongoose.model('Producto', productoSchema);
@@ -49,7 +53,7 @@ const Producto = mongoose.model('Producto', productoSchema);
 app.get('/productos', async(req, res)=>{
     try{
         const productos = await Producto.find();
-        res.json(producto);
+        res.json(productos);
 
     }catch(err){
         res.status(404).send(err);
@@ -61,3 +65,7 @@ app.listen(port,()=>{
     console.log(`La aplicación está escuchando en http:localhost:${port}`);
     
 })
+
+
+
+
