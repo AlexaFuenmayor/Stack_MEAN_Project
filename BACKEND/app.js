@@ -55,8 +55,8 @@ app.get('/productos', async(req, res)=>{
         const productos = await Producto.find();
         res.json(productos);
 
-    }catch(err){
-        res.status(404).send(err);
+    }catch(e){
+        res.status(404).send(er);
 
     }
 })

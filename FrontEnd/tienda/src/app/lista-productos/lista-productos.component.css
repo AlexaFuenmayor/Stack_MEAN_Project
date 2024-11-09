@@ -1,0 +1,12 @@
+*{
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo{
+    color: black;
+    margin: 0 auto;
+    justify-content: center;
+}
